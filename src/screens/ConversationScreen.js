@@ -9,6 +9,7 @@ export default function ConversationScreen({ navigation, route }) {
   const [messages, setMessages] = useState([]);
   const { userId } = route.params;
   const chatRef = doc(db, "Chats", userId);
+  console.log('userID in ConversationScreen.js: ' + userId);
 
   const { user, userData } = useAuthentication();
 
@@ -24,11 +25,22 @@ export default function ConversationScreen({ navigation, route }) {
   }, []);
 
   const onSend = useCallback((messages = []) => {
+    console.log('trying to send a message', messages[0])
     updateDoc(chatRef, {
       // arrayUnion appends the message to the existing array
       messages: arrayUnion(messages[0]),
     });
   }, []);
+
+  const onQuickReplySend = (param) => {
+    console.log('params in Convo Screen: ', param)
+    // console.log('param.title: ', param)
+    // updateDoc(chatRef, {
+    //   messages: arrayUnion(param)
+    // })
+  }
+
+
   if (!user || !userData) {
     return <View></View>;
   }
@@ -43,6 +55,7 @@ export default function ConversationScreen({ navigation, route }) {
       inverted={false}
       showUserAvatar={true}
       renderUsernameOnMessage={true}
+      onQuickReply={onQuickReplySend}
     />
   );
 }
