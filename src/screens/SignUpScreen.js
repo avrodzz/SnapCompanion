@@ -32,6 +32,7 @@ export default function LoginScreen({ navigation }) {
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // creates user using setDoc firebase
+        // console.log(userCredential.user.email + userCredential.user.uid)
         createUser(userCredential.user.email, userCredential.user.uid);
         const user = userCredential.user;
         auth.currentUser = user;
