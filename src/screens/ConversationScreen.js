@@ -34,10 +34,10 @@ export default function ConversationScreen({ navigation, route }) {
 
   const onQuickReplySend = (param) => {
     console.log('params in Convo Screen: ', param)
-    console.log('param.title: ', param[0].title)
-    updateDoc(chatRef, {
-      messages: arrayUnion(param[0])
-    })
+    // console.log('param.title: ', param)
+    // updateDoc(chatRef, {
+    //   messages: arrayUnion(param)
+    // })
   }
 
 
