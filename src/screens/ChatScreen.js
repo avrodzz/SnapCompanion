@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
-
-import { collection, getDocs } from "firebase/firestore";
+import { Text, View, TouchableOpacity, StyleSheet, Button } from "react-native";
+import { collection, doc, getDocs, updateDoc, arrayUnion } from "firebase/firestore";
 import db from "../../firebase";
+import { useAuthentication } from "../utils/hooks/useAuthentication";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-export default function ChatScreen({ navigation }) {
+export default function ChatScreen({ navigation}) {
   const [users, setUsers] = useState([]);
+  
+  const { user, userData } = useAuthentication();
+  
 
   async function getUsers() {
     const querySnapshot = await getDocs(collection(db, "Chats"));
@@ -49,6 +52,14 @@ export default function ChatScreen({ navigation }) {
           </TouchableOpacity>
         );
       })}
+      <Button title='button' onPress={() => {
+        const chatRef = doc(db, "Chats", 'myfirstchat');
+        updateDoc(chatRef, {
+          // arrayUnion appends the message to the existing array
+          messages: arrayUnion(MESSAGE),
+        });
+      }
+        }>Click Me</Button>
     </View>
   );
 }
@@ -81,3 +92,31 @@ const styles = StyleSheet.create({
     top: 10,
   },
 });
+
+
+const MESSAGE = {
+  _id: 2,
+  text: 'This is a quick reply. Do you love Gifted Chat? (checkbox)',
+  createdAt: new Date(),
+  quickReplies: {
+    type: 'checkbox', // or 'radio',
+    values: [
+      {
+        title: 'Yes',
+        value: 'yes',
+      },
+      {
+        title: 'Yes, let me show you with a picture!',
+        value: 'yes_picture',
+      },
+      {
+        title: 'Nope. What?',
+        value: 'no',
+      },
+    ],
+  },
+  user: {
+    _id: 2,
+    name: 'React Native',
+  },
+}
