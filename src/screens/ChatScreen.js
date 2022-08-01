@@ -9,7 +9,34 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 export default function ChatScreen({ navigation}) {
   const [users, setUsers] = useState([]);
   
-  const { user, userData } = useAuthentication();
+  // const { user, userData } = useAuthentication();
+
+  const MESSAGE = {
+    _id: '2',
+    text: 'This is a quick reply. Do you love Gifted Chat? (checkbox)',
+    createdAt: new Date(),
+    quickReplies: {
+      type: 'checkbox', // or 'radio',
+      values: [
+        {
+          title: 'Yes',
+          value: 'yes',
+        },
+        {
+          title: 'Yes, let me show you with a picture!',
+          value: 'yes_picture',
+        },
+        {
+          title: 'Nope. What?',
+          value: 'no',
+        },
+      ],
+    },
+    user: {
+      _id: '2',
+      name: 'React Native',
+    },
+  }
   
 
   async function getUsers() {
@@ -22,6 +49,8 @@ export default function ChatScreen({ navigation}) {
   useEffect(() => {
     getUsers();
   }, []);
+
+  console.log("userId in ChatScreen.js:", users)
 
   return (
     <View style={styles.container}>
@@ -53,7 +82,8 @@ export default function ChatScreen({ navigation}) {
         );
       })}
       <Button title='button' onPress={() => {
-        const chatRef = doc(db, "Chats", 'myfirstchat');
+        const chatRef = doc(db, "Chats", "Companion");
+
         updateDoc(chatRef, {
           // arrayUnion appends the message to the existing array
           messages: arrayUnion(MESSAGE),
@@ -94,29 +124,4 @@ const styles = StyleSheet.create({
 });
 
 
-const MESSAGE = {
-  _id: 2,
-  text: 'This is a quick reply. Do you love Gifted Chat? (checkbox)',
-  createdAt: new Date(),
-  quickReplies: {
-    type: 'checkbox', // or 'radio',
-    values: [
-      {
-        title: 'Yes',
-        value: 'yes',
-      },
-      {
-        title: 'Yes, let me show you with a picture!',
-        value: 'yes_picture',
-      },
-      {
-        title: 'Nope. What?',
-        value: 'no',
-      },
-    ],
-  },
-  user: {
-    _id: 2,
-    name: 'React Native',
-  },
-}
+

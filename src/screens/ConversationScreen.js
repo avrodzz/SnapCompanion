@@ -8,14 +8,15 @@ import { View } from "react-native";
 export default function ConversationScreen({ navigation, route }) {
   const [messages, setMessages] = useState([]);
   const { userId } = route.params;
-  const chatRef = doc(db, "Chats", userId);
-  console.log('userID in ConversationScreen.js: ' + userId);
+  const chatRef = doc(db, 'Chats', userId);
+  console.log('userID in ConversationScreen.js', userId);
 
   const { user, userData } = useAuthentication();
 
   useEffect(() => {
     let unsubscribeFromNewSnapshots = onSnapshot(chatRef, (doc) => {
-      console.log("New Snapshot!");
+      console.log('New Snapshot!');
+      console.log('ConversationScreen.js - doc.data().messages', doc.data().messages, '--->')
       setMessages(doc.data().messages);
     });
 
@@ -25,21 +26,23 @@ export default function ConversationScreen({ navigation, route }) {
   }, []);
 
   const onSend = useCallback((messages = []) => {
-    console.log('trying to send a message', messages[0])
+    console.log('trying to send a message', messages[0], '--->')
+
     updateDoc(chatRef, {
       // arrayUnion appends the message to the existing array
       messages: arrayUnion(messages[0]),
     });
   }, []);
 
-  const onQuickReplySend = (param) => {
-    console.log('params in Convo Screen: ', param)
-    // console.log('param.title: ', param)
-    // updateDoc(chatRef, {
-    //   messages: arrayUnion(param)
-    // })
+  const onQuickReplySend = (quickReply) => {
+    console.log('quick reply in ConversationScreen.js', quickReply, '--->')
+    
+    updateDoc(chatRef, {
+      // arrayUnion appends the message to the existing array
+      messages: arrayUnion(quickReply[0]),
+    });
   }
-
+  
 
   if (!user || !userData) {
     return <View></View>;
@@ -55,7 +58,8 @@ export default function ConversationScreen({ navigation, route }) {
       inverted={false}
       showUserAvatar={true}
       renderUsernameOnMessage={true}
-      onQuickReply={onQuickReplySend}
+      onQuickReply={quickReply => onQuickReplySend(quickReply)}
+      alwaysShowSend={true}
     />
   );
 }
