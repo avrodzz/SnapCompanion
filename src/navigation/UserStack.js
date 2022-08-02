@@ -17,6 +17,7 @@ import CompanionProfileScreen from "../screens/CompanionProfileScreen";
 // Stacks
 import ChatStack from "./ChatStack";
 
+
 const Tab = createBottomTabNavigator();
 
 export default function UserStack() {
@@ -98,6 +99,11 @@ export default function UserStack() {
           component={CompanionProfileScreen}
           options={screenOptions}
         />
+        {/* <Tab.Screen
+          name="Journal"
+          component={JournalScreen}
+          options={screenOptions}
+        /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );
