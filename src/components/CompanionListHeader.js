@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     marginBottom: 15
   },
   avatarContainer: {
-    marginLeft: 10,
-    marginRight: 10
+    marginLeft: 23.98,
+    marginRight: 19.32
   },
   headerTextContainer: {
 
