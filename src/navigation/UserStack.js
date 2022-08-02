@@ -12,6 +12,7 @@ import MapScreen from "../screens/MapScreen";
 import CameraScreen from "../screens/CameraScreen";
 import StoriesScreen from "../screens/StoriesScreen";
 import SpotlightScreen from "../screens/SpotlightScreen";
+import CompanionProfileScreen from "../screens/CompanionProfileScreen";
 
 // Stacks
 import ChatStack from "./ChatStack";
@@ -90,6 +91,11 @@ export default function UserStack() {
         <Tab.Screen
           name="Spotlight"
           component={SpotlightScreen}
+          options={screenOptions}
+        />
+        <Tab.Screen
+          name="Companion Profile"
+          component={CompanionProfileScreen}
           options={screenOptions}
         />
       </Tab.Navigator>
