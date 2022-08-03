@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { View, Text, StyleSheet, } from 'react-native'
 import StatBar from '../components/StatBar'
-import { RNCamera , SafeAreaView, TouchableOpacity,} from 'react-native-camera';
 
 const StoriesScreen = ({ navigation }) => {
   const cameraRef = useRef(null);

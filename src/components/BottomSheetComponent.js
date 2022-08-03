@@ -16,7 +16,7 @@ export default function BottomSheetComponent() {
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "40%", "60%"], []);
+  const snapPoints = useMemo(() => [ "40%", "60%", "90%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {
