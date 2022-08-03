@@ -1,6 +1,8 @@
 import React, { useCallback, useRef, useMemo } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
+import CompanionListHeader from "./CompanionListHeader";
+import CompanionListItem from "./CompanionListItem";
 
 export default function BottomSheetComponent() {
   // hooks
@@ -9,12 +11,12 @@ export default function BottomSheetComponent() {
   // variables
   const data = useMemo(
     () =>
-      Array(50)
+      Array(5)
         .fill(0)
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "40%", "70%"], []);
+  const snapPoints = useMemo(() => [ "40%", "60%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {
@@ -39,10 +41,6 @@ export default function BottomSheetComponent() {
 
   return (
     <View style={styles.container}>
-      {/* <Button title="Snap To 90%" onPress={() => handleSnapPress(2)} />
-      <Button title="Snap To 50%" onPress={() => handleSnapPress(1)} />
-      <Button title="Snap To 25%" onPress={() => handleSnapPress(0)} />
-      <Button title="Close" onPress={() => handleClosePress()} /> */}
       <BottomSheet
         ref={sheetRef}
         index={0}
@@ -50,7 +48,10 @@ export default function BottomSheetComponent() {
         onChange={handleSheetChange}
       >
         <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
-          {data.map(renderItem)}
+          {/* {data.map(renderItem)} */}
+          <CompanionListHeader avatarSize={67.61} companionName='Max' companionBirthday='August 2, 2022' />
+          <CompanionListItem headerTextTitle='Saved Journals'/>
+          <CompanionListItem headerTextTitle='Resources'/>
         </BottomSheetScrollView>
       </BottomSheet>
     </View>
@@ -60,14 +61,8 @@ export default function BottomSheetComponent() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 200,
   },
   contentContainer: {
     backgroundColor: "white",
-  },
-  itemContainer: {
-    padding: 6,
-    margin: 6,
-    backgroundColor: "#eee",
-  },
+  }
 });

@@ -13,9 +13,11 @@ import CameraScreen from "../screens/CameraScreen";
 import StoriesScreen from "../screens/StoriesScreen";
 import SpotlightScreen from "../screens/SpotlightScreen";
 import CompanionProfileScreen from "../screens/CompanionProfileScreen";
+import JournalScreen from "../screens/JournalScreen";
 
 // Stacks
 import ChatStack from "./ChatStack";
+
 
 const Tab = createBottomTabNavigator();
 
@@ -70,6 +72,12 @@ export default function UserStack() {
             } else if (route.name === "Spotlight") {
               iconName = "ios-play-outline";
               iconColor = focused ? "red" : "grey";
+            } else if (route.name === "Companion Profile") {
+              iconName = "ios-paw-outline";
+              iconColor = focused ? "red" : "grey"
+            } else if (route.name === "Journal") {
+              iconName = "ios-journal-outline";
+              iconColor = focused ? "red" : "grey"
             }
             return <Ionicons name={iconName} size={size} color={iconColor} />;
           },
@@ -96,6 +104,11 @@ export default function UserStack() {
         <Tab.Screen
           name="Companion Profile"
           component={CompanionProfileScreen}
+          options={screenOptions}
+        />
+        <Tab.Screen
+          name="Journal"
+          component={JournalScreen}
           options={screenOptions}
         />
       </Tab.Navigator>
