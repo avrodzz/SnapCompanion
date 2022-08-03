@@ -5,6 +5,7 @@ import db from "../../firebase";
 import { useAuthentication } from "../utils/hooks/useAuthentication";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
+import StatBar from "../components/StatBar";
 
 export default function ChatScreen({ navigation}) {
   const [users, setUsers] = useState([]);
@@ -54,6 +55,10 @@ export default function ChatScreen({ navigation}) {
 
   return (
     <View style={styles.container}>
+       <View style={{ height:93}}>
+       
+      </View>
+        
       {users?.map((user) => {
         return (
           <TouchableOpacity
@@ -65,6 +70,7 @@ export default function ChatScreen({ navigation}) {
             }}
             key={user}
           >
+            
             <Ionicons
               style={styles.userIcon}
               name="ios-person-outline"

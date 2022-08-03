@@ -1,12 +1,15 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import StatBar from '../components/StatBar'
 
-export default function SpotlightScreen() {
+
+export default function SpotlightScreen({navigation}) {
   return (
     <View>
-        <Text>
-            SpotlightScreen
-        </Text>
+        <View style={{ height:93}}>
+        <StatBar screen="map" navigation={navigation} />
+      </View>
+      <Text>Hello form Stories</Text>
     </View>
   )
 }

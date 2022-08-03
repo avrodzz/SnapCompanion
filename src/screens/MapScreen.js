@@ -12,6 +12,7 @@ import {
 import * as Location from "expo-location";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
+import StatBar from "../components/StatBar";
 
 export default function MapScreen({ navigation }) {
   const [location, setLocation] = useState(null);
@@ -48,6 +49,7 @@ export default function MapScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+       <StatBar screen="map" navigation={navigation} />
       <MapView
         style={styles.map}
         region={currentRegion}
