@@ -16,7 +16,7 @@ export default function CompanionBottomSheet() {
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "40%", "60%", "90%"], []);
+  const snapPoints = useMemo(() => [ "40%", "60%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {

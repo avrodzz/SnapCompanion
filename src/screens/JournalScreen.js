@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Button, TextInput } from "react-native";
+import { SafeAreaView, StyleSheet, View, Text, Button, TextInput } from "react-native";
 import { doc, setDoc } from "firebase/firestore";
 import db from "../../firebase";
 import { useAuthentication } from "../utils/hooks/useAuthentication";
@@ -29,7 +29,7 @@ export default function JournalScreen(props) {
   }
 
   return(
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
         <View style={styles.titleTextContainer}>
            <Text style={styles.titleText}>Title</Text> 
         </View>
@@ -45,7 +45,7 @@ export default function JournalScreen(props) {
             <Button title='Save' style={styles.saveButton} onPress={onSave}></Button>
         </View>
         
-    </View>
+    </SafeAreaView>
   )
 }
 

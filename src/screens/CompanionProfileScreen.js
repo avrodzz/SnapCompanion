@@ -1,17 +1,18 @@
 import React, { useCallback, useRef, useMemo } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Button, SafeAreaView } from "react-native";
 import CompanionBottomSheet from "../components/CompanionBottomSheet";
 
 export default function CompanionProfileScreen({ navigation, route }) {
   return(
+    <SafeAreaView style={styles.container}>
       <CompanionBottomSheet />
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 200,
   },
   contentContainer: {
     backgroundColor: "white",
