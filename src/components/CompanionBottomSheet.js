@@ -4,7 +4,7 @@ import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import CompanionListHeader from "./CompanionListHeader";
 import CompanionListItem from "./CompanionListItem";
 
-export default function BottomSheetComponent() {
+export default function CompanionBottomSheet() {
   // hooks
   const sheetRef = useRef(null);
 

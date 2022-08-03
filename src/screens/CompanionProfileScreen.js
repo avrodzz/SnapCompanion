@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useMemo } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
-import BottomSheetComponent from "../components/BottomSheetComponent";
+import BottomSheetComponent from "../components/CompanionBottomSheet";
 
 export default function CompanionProfileScreen({ navigation, route }) {
   return(
