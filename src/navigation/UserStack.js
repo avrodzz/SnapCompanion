@@ -92,7 +92,7 @@ export default function UserStack() {
         <Tab.Screen
           name="Spotlight"
           component={SpotlightScreen}
-          options={screenOptions}
+          options={{...screenOptions, headerShown: true}}
         />
         <Tab.Screen
           name="Companion Profile"

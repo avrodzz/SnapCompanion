@@ -56,7 +56,7 @@ export default function ChatScreen({ navigation}) {
   return (
     <View style={styles.container}>
        <View style={{ height:93}}>
-        <StatBar screen="ChatScreen" navigation={navigation} />
+       
       </View>
         
       {users?.map((user) => {
