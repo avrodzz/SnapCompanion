@@ -6,7 +6,7 @@ import { Button } from "react-native";
 // Screens
 import ChatScreen from "../screens/ChatScreen";
 import ConversationScreen from "../screens/ConversationScreen";
-
+import ProfileScreen from "../screens/ProfileScreen";
 import { getAuth, signOut } from "firebase/auth";
 
 
@@ -42,9 +42,9 @@ export default function ChatStack({ navigation }) {
       <Stack.Screen
         name="Chat"
         component={ChatScreen}
-        options={screenOptions}
       />
-      <Stack.Screen name="Conversation" component={ConversationScreen} />
+      <Stack.Screen name="Conversation" component={ConversationScreen}  options={{headerShown:false}} />
+      <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerTransparent:true}}/>
     </Stack.Navigator>
   );
 }

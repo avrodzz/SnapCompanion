@@ -16,6 +16,7 @@ import CompanionProfileScreen from "../screens/CompanionProfileScreen";
 
 // Stacks
 import ChatStack from "./ChatStack";
+import StoriesStack from "./StoriesStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -85,8 +86,8 @@ export default function UserStack() {
         />
         <Tab.Screen
           name="Stories"
-          component={StoriesScreen}
-          options={screenOptions}
+          component={StoriesStack}
+          options={{...screenOptions,  headerShown: false}}
         />
         <Tab.Screen
           name="Spotlight"
