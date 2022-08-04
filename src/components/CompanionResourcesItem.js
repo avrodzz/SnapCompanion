@@ -6,13 +6,12 @@ import {
   Circle,
   ScrollView,
 } from "native-base";
+import ActiveMindsButton from "../../assets/images/resourceButtons/active_minds_button.png"
+import CrisisLineButton from "../../assets/images/resourceButtons/crisis_line_button.png"
+import HeadSpaceButton from "../../assets/images/resourceButtons/headspace_button.png"
+import HereForYouButton from "../../assets/images/resourceButtons/here_for_you_button.png"
 
-import Jul_14 from '../../assets/images/savedJournalButtons/jul_14_button.png'
-import Jun_23 from '../../assets/images/savedJournalButtons/jun_23_button.png'
-import Mar_8 from '../../assets/images/savedJournalButtons/mar_8_button.png'
-import Mar_2 from '../../assets/images/savedJournalButtons/mar_2_button.png'
-
-export default function CompanionListItem(props) {
+export default function CompanionResourcesItem(props) {
 
   return (
     <View style={styles.container}>
@@ -24,16 +23,16 @@ export default function CompanionListItem(props) {
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollViewContainer}>
                 <HStack space={5}>
                   <TouchableOpacity>
-                    <Image source={Jul_14} />
+                    <Image source={CrisisLineButton} />
                   </TouchableOpacity>
                   <TouchableOpacity>
-                    <Image source={Jun_23} />
+                    <Image source={HereForYouButton} />
                   </TouchableOpacity>
                   <TouchableOpacity>
-                    <Image source={Mar_8} />
+                    <Image source={HeadSpaceButton} />
                   </TouchableOpacity>
                   <TouchableOpacity>
-                    <Image source={Mar_2} />
+                    <Image source={ActiveMindsButton} />
                   </TouchableOpacity>
                 </HStack>
               </ScrollView>

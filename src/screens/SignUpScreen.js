@@ -13,7 +13,7 @@ import db from "../../firebase";
 // Components
 import ReturnButton from "../components/ReturnButton";
 
-export default function LoginScreen({ navigation }) {
+export default function SignUpScreen({ navigation }) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
