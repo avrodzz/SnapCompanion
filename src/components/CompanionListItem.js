@@ -2,13 +2,9 @@ import React from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
 import {
   NativeBaseProvider,
-  Container,
-  Center,
-  VStack,
   HStack,
   Circle,
   ScrollView,
-  Pressable,
 } from "native-base";
 
 export default function CompanionListItem(props) {

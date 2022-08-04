@@ -6,6 +6,7 @@ import CompanionButtons from "./CompanionButtons"
 import CompanionListItem from "./CompanionListItem";
 import maxAvatar from "../../assets/images/max_icon_green.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import CompanionResourcesItem from "./CompanionResourcesItem";
 
 
 export default function CompanionBottomSheet(props) {
@@ -53,9 +54,10 @@ export default function CompanionBottomSheet(props) {
       >
         <BottomSheetScrollView contentContainerStyle={{...styles.contentContainer}}>
           <CompanionListHeader avatarSrc={maxAvatar} avatarSize={67.61} companionName='Max' companionBirthday='August 3, 2022' />
-          <CompanionButtons />
+          <CompanionButtons navigation={props.navigation} />
           <CompanionListItem headerTextTitle='Saved Journals'/>
-          <CompanionListItem headerTextTitle='Resources'/>
+          {/* <CompanionListItem headerTextTitle='Resources'/> */}
+          <CompanionResourcesItem headerTextTitle='Resources' />
         </BottomSheetScrollView>
       </BottomSheet>
   );

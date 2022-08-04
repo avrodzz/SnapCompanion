@@ -7,7 +7,7 @@ export default function CompanionProfileScreen({ navigation, route }) {
   return(
     <SafeAreaView style={styles.container}>
       <Image source={maxPhone} />
-      <CompanionBottomSheet />
+      <CompanionBottomSheet navigation={navigation} />
     </SafeAreaView>
   )
 }
@@ -16,13 +16,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // backgroundColor: 'red'
-  },
-  contentContainer: {
-    backgroundColor: "white",
-  },
-  itemContainer: {
-    padding: 6,
-    margin: 6,
-    backgroundColor: "#eee",
   },
 });
