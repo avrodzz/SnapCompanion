@@ -6,6 +6,7 @@ import CompanionButtons from "./CompanionButtons"
 import CompanionListItem from "./CompanionListItem";
 import maxAvatar from "../../assets/images/max_icon_green.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import CompanionResourcesItem from "./CompanionResourcesItem";
 
 
 export default function CompanionBottomSheet(props) {
@@ -20,7 +21,7 @@ export default function CompanionBottomSheet(props) {
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "29%", "38%", "60%"], []);
+  const snapPoints = useMemo(() => [ "22%", "38%", "60%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {
@@ -46,20 +47,16 @@ export default function CompanionBottomSheet(props) {
   return (
       <BottomSheet
         ref={sheetRef}
-        index={0}
+        index={1}
         snapPoints={snapPoints}
         onChange={handleSheetChange}
         backgroundStyle={{...styles.contentContainer}}
       >
         <BottomSheetScrollView contentContainerStyle={{...styles.contentContainer}}>
           <CompanionListHeader avatarSrc={maxAvatar} avatarSize={67.61} companionName='Max' companionBirthday='August 3, 2022' />
-          {/* <View>
-          <TouchableOpacity>
-                <Ionicons name='chatbox' size={10} />;
-          </TouchableOpacity>
-            </View> */}
+          <CompanionButtons navigation={props.navigation} />
           <CompanionListItem headerTextTitle='Saved Journals'/>
-          <CompanionListItem headerTextTitle='Resources'/>
+          <CompanionResourcesItem headerTextTitle='Resources' />
         </BottomSheetScrollView>
       </BottomSheet>
   );

@@ -101,7 +101,7 @@ export default function UserStack() {
         <Tab.Screen
           name="Journal"
           component={JournalScreen}
-          options={screenOptions}
+          options={{...screenOptions, headerShown: false}}
         />
       </Tab.Navigator>
     </NavigationContainer>
