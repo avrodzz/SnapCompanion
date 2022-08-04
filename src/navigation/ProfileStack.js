@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 // Screens
-import SpotlightScreen from "../screens/SpotlightScreen";
+import CompanionProfileScreen from "../screens/CompanionProfileScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import StatBar from '../components/StatBar'
 
@@ -16,7 +16,7 @@ export default function SpotlightStack({ navigation }) {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Spotlight" component={SpotlightScreen} options={{...screenOptions, headerShown:true}} />
+      <Stack.Screen name="CompanionProfileScreen" component={CompanionProfileScreen} options={{...screenOptions, headerShown:true}} />
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{...screenOptions, headerTransparent:true}}/>
     </Stack.Navigator>
   );

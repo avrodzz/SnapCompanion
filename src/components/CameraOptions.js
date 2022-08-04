@@ -55,6 +55,15 @@ export default function CameraOptions({ flipCamera, switchFlash }) {
           size={30}
           color="white"
         />
+        <Ionicons
+          style={styles.musicIcon}
+          name="ios-musical-notes-outline"
+          size={30}
+          color="white"
+          onPress={() => {
+            navigation.navigate("Login");
+          }}
+        />
       </TouchableOpacity>
     </View>
   );
