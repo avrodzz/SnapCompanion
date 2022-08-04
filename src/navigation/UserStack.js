@@ -10,14 +10,12 @@ import { getAuth, signOut } from "firebase/auth";
 // Screens
 import MapScreen from "../screens/MapScreen";
 import CameraScreen from "../screens/CameraScreen";
-import StoriesScreen from "../screens/StoriesScreen";
-import SpotlightScreen from "../screens/SpotlightScreen";
+import SpotlightStack from "./SpotlightStack";
 import CompanionProfileScreen from "../screens/CompanionProfileScreen";
 import JournalScreen from "../screens/JournalScreen";
 
 // Stacks
 import ChatStack from "./ChatStack";
-import StoriesStack from "./StoriesStack";
 
 
 const Tab = createBottomTabNavigator();
@@ -92,18 +90,14 @@ export default function UserStack() {
           component={CameraScreen}
           options={{...screenOptions, headerShown: false}} 
         />
+        
         <Tab.Screen
-          name="Stories"
-          component={StoriesStack}
-          options={{...screenOptions,  headerShown: false}}
+          name="SpotlightStack"
+          component={SpotlightStack}
+          options={{...screenOptions, headerShown: false}}
         />
         <Tab.Screen
-          name="Spotlight"
-          component={SpotlightScreen}
-          options={{...screenOptions, headerShown: true}}
-        />
-        <Tab.Screen
-          name="Companion Profile"
+          name="CompanionProfile"
           component={CompanionProfileScreen}
           options={screenOptions}
         />

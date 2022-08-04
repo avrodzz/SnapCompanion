@@ -16,7 +16,7 @@ export default function BottomSheetComponent() {
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "40%", "60%"], []);
+  const snapPoints = useMemo(() => [ "23%","40%", "60%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {
@@ -40,8 +40,7 @@ export default function BottomSheetComponent() {
   );
 
   return (
-    <View style={styles.container}>
-      <BottomSheet
+    <BottomSheet
         ref={sheetRef}
         index={0}
         snapPoints={snapPoints}
@@ -50,11 +49,10 @@ export default function BottomSheetComponent() {
         <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
           {/* {data.map(renderItem)} */}
           <CompanionListHeader avatarSize={67.61} companionName='Max' companionBirthday='August 2, 2022' />
-          <CompanionListItem headerTextTitle='Saved Journals'/>
-          <CompanionListItem headerTextTitle='Resources'/>
+          {/* <CompanionListItem headerTextTitle='Saved Journals'/>
+          <CompanionListItem headerTextTitle='Resources'/> */}
         </BottomSheetScrollView>
       </BottomSheet>
-    </View>
   );
 };
 

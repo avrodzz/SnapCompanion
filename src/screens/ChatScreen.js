@@ -4,8 +4,10 @@ import { collection, doc, getDocs, updateDoc, arrayUnion } from "firebase/firest
 import db from "../../firebase";
 import { useAuthentication } from "../utils/hooks/useAuthentication";
 
+
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StatBar from "../components/StatBar";
+import CompanionBottomSheet from "../components/CompanionBottomSheet";
 
 export default function ChatScreen({ navigation}) {
   const [users, setUsers] = useState([]);

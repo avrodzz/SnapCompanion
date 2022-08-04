@@ -7,7 +7,7 @@ export default function SpotlightScreen({navigation}) {
   return (
     <View>
         <View style={{ height:93}}>
-        <StatBar screen="map" navigation={navigation} />
+        <StatBar screen="spotlight" navigation={navigation} />
       </View>
       <Text>Hello form Stories</Text>
     </View>

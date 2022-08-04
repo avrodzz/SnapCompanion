@@ -3,18 +3,18 @@ import { View,Text , Image, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export default function StatBar({navigation , screen="camera" }) {
+export default function StatBar({navigation, screen="spotlight"}) {
 
 return (
   <View style={styles.container}>
       <TouchableOpacity
       onPress={()=>{
-        navigation.navigate("Profile");
+        navigation.navigate('SpotlightStack', { screen: 'ProfileScreen' });
       }}
       >
         <Image
           style={styles.bitmojiImage}
-          source={require("../../assets/snapchat/personalBitmoji.png")} //<i class="fa-solid fa-magnifying-glass"></i>
+          source={require("../../assets/cat.png")} //<i class="fa-solid fa-magnifying-glass"></i>
         />
       </TouchableOpacity>
   <View style={styles.iconContainer} >
