@@ -1,13 +1,17 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
-import UserAvatar from 'react-native-user-avatar';
+import { StyleSheet, View, Text, Button, Image } from "react-native";
+// import UserAvatar from 'react-native-user-avatar';
+import { Avatar, NativeBaseProvider } from "native-base";
+
 
 export default function CompanionListHeader(props) {
 
   return (
     <View style={styles.container}>
         <View style={styles.avatarContainer}>
-            <UserAvatar size={props.avatarSize} name={props.companionName}></UserAvatar>
+          <NativeBaseProvider>
+            <Avatar source={props.avatarSrc} />
+          </NativeBaseProvider>
         </View>
        
         <View style={styles.headerTextContainer}>
