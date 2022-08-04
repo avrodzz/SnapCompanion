@@ -7,8 +7,17 @@ import CompanionListItem from "./CompanionListItem";
 import maxAvatar from "../../assets/images/max_icon_green.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+<<<<<<< HEAD
 
 export default function CompanionBottomSheet(props) {
+=======
+<<<<<<< HEAD:src/components/CompanionBottomSheet.js
+export default function CompanionBottomSheet() {
+=======
+
+export default function CompanionBottomSheet(props) {
+>>>>>>> origin/main:src/components/BottomSheetComponent.js
+>>>>>>> 59be738ba829b2677dfeeca4851f2f65b34ac18f
   // hooks
   const sheetRef = useRef(null);
 

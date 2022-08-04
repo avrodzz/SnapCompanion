@@ -10,8 +10,15 @@ import { getAuth, signOut } from "firebase/auth";
 // Screens
 import MapScreen from "../screens/MapScreen";
 import CameraScreen from "../screens/CameraScreen";
+<<<<<<< HEAD
 import SpotlightStack from "./SpotlightStack";
+<<<<<<< HEAD
 import SpotlightScreen from "../screens/SpotlightScreen";
+=======
+=======
+import SpotlightScreen from "../screens/SpotlightScreen";
+>>>>>>> origin/main
+>>>>>>> 59be738ba829b2677dfeeca4851f2f65b34ac18f
 import CompanionProfileScreen from "../screens/CompanionProfileScreen";
 import JournalScreen from "../screens/JournalScreen";
 
@@ -90,12 +97,30 @@ export default function UserStack() {
         />
         
         <Tab.Screen
+<<<<<<< HEAD
           name="Spotlight"
           component={SpotlightScreen}
           options={{...screenOptions, headerShown: true}}
         />
         <Tab.Screen
           name="Companion Profile"
+=======
+<<<<<<< HEAD
+          name="SpotlightStack"
+          component={SpotlightStack}
+          options={{...screenOptions, headerShown: false}}
+        />
+        <Tab.Screen
+          name="CompanionProfile"
+=======
+          name="Spotlight"
+          component={SpotlightScreen}
+          options={{...screenOptions, headerShown: true}}
+        />
+        <Tab.Screen
+          name="Companion Profile"
+>>>>>>> origin/main
+>>>>>>> 59be738ba829b2677dfeeca4851f2f65b34ac18f
           component={CompanionProfileScreen}
           options={{...screenOptions, headerShown: false}}
         />
