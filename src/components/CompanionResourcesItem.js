@@ -34,12 +34,6 @@ export default function CompanionResourcesItem(props) {
                   <TouchableOpacity>
                     <Image source={ActiveMindsButton} />
                   </TouchableOpacity>
-                  
-                  {/* <Circle size="67.61px" bg="light.300" />
-                  <Circle size="67.61px" bg="light.300" />
-                  <Circle size="67.61px" bg="light.300" />
-                  <Circle size="67.61px" bg="light.300" /> */}
-                  
                 </HStack>
               </ScrollView>
           </NativeBaseProvider>

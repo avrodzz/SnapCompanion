@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, View, Text, Button, TextInput } from "react-native";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
 import db from "../../firebase";
 import { useAuthentication } from "../utils/hooks/useAuthentication";
-// import { TextArea, Box, Center, NativeBaseProvider, extendTheme } from "native-base";
 
-export default function JournalScreen(props) {
-//   const [textAreaValue, setTextAreaValue] = useState("");
+export default function JournalScreen({route}) {
+//   const [journalName, setJournalName] = useState("");
+  const { journalName } = route.params;
   const [contentInput, onChangeContentInput] = useState("");
   const { user, userData } = useAuthentication();
 
@@ -17,21 +17,23 @@ export default function JournalScreen(props) {
   const onSave = () => {
     const userRef = doc(db, "Users", user.uid);
     console.log('userRef', userRef.path)
-    const journalRef = doc(userRef, "journals","journalName")
-    console.log('journalRef', journalRef.path)
-
-    setDoc(journalRef, {
-       content: contentInput,
-       lastEdited: new Date()
-    }).catch(
-        e => console.log('here firebase error ', e)
-    )
+    if(journalName){
+        console.log('journalName', journalName)
+        const journalRef = doc(userRef, "journals", journalName)
+        console.log('journalRef', journalRef.path)
+        setDoc(journalRef, {
+           content: contentInput,
+           lastEdited: new Date()
+        }).catch(
+            e => console.log('here firebase error ', e)
+        )
+    }
   }
 
   return(
     <SafeAreaView style={styles.container}>
         <View style={styles.titleTextContainer}>
-           <Text style={styles.titleText}>Title</Text> 
+           <Text style={styles.titleText}>{journalName ? journalName : 'Title'}</Text> 
         </View>
         <View style={styles.contentInputContainer}>
             <TextInput

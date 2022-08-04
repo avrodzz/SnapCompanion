@@ -6,8 +6,6 @@ import ChatButton from "../../assets/images/companionButtons/chat_button.png"
 import JournalButton from "../../assets/images/companionButtons/journal_button.png"
 import { useState } from "react";
 
-
-
 export default function CompanionButtons(props) {
   const [modalVisible, setModalVisible] = useState(false);
   const [journalNameInput, onChangeJournalNameInput] = useState("");
@@ -31,10 +29,12 @@ export default function CompanionButtons(props) {
     setModalVisible(true);
   }
 
-  const onEnterKeyPressed = (e) => {
-    // if(e.nativeEvent.key === 'Enter'){
-    //     console.log('enter key pressed')
-    // }
+  const onSubmitButtonPress = () => {
+    setModalVisible(false);
+    props.navigation.navigate('Journal', {
+        journalName: journalNameInput
+    })
+    onChangeJournalNameInput("");
   }
 
   return (
@@ -67,7 +67,6 @@ export default function CompanionButtons(props) {
           Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
-        // presentationStyle={"fullScreen"}
       >
         <SafeAreaView style={styles.centeredView}>
           <View style={styles.modalView}>
@@ -77,14 +76,13 @@ export default function CompanionButtons(props) {
                     style={styles.contentInput}
                     onChangeText={onChangeJournalNameInput}
                     value={journalNameInput}
-                    // onKeyPress={(k) => onEnterKeyPressed(k)}
                 />
             </View>
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={onSubmitButtonPress}
             >
-              <Text style={styles.textStyle}>Hide</Text>
+              <Text style={styles.textStyle}>Submit</Text>
             </Pressable>
           </View>
         </SafeAreaView>

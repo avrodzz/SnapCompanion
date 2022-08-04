@@ -56,7 +56,6 @@ export default function CompanionBottomSheet(props) {
           <CompanionListHeader avatarSrc={maxAvatar} avatarSize={67.61} companionName='Max' companionBirthday='August 3, 2022' />
           <CompanionButtons navigation={props.navigation} />
           <CompanionListItem headerTextTitle='Saved Journals'/>
-          {/* <CompanionListItem headerTextTitle='Resources'/> */}
           <CompanionResourcesItem headerTextTitle='Resources' />
         </BottomSheetScrollView>
       </BottomSheet>
