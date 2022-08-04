@@ -1,6 +1,9 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import CameraButton from "../../assets/images/camera_button.png"
+import HeartButton from "../../assets/images/heart_button.png"
+import ChatButton from "../../assets/images/chat_button.png"
+
 
 
 export default function CompanionButtons(props) {
@@ -9,7 +12,17 @@ export default function CompanionButtons(props) {
     <View style={styles.container}>
         <View>
             <TouchableOpacity>
-                <Ionicons name='chatbox' size={10} />;
+                <Image source={CameraButton} />
+            </TouchableOpacity>
+        </View>
+        <View>
+            <TouchableOpacity>
+                <Image source={ChatButton} />
+            </TouchableOpacity>
+        </View>
+        <View>
+            <TouchableOpacity>
+                <Image source={HeartButton} />
             </TouchableOpacity>
         </View>
     </View>
@@ -19,27 +32,8 @@ export default function CompanionButtons(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // flexDirection: 'row',
-    // marginBottom: 15
-  },
-  avatarContainer: {
-    marginLeft: 23.98,
-    marginRight: 19.32
-  },
-  headerTextContainer: {
-
-  },
-  companionNameContainer: {
-    marginTop: 5,
+    flexDirection: 'row',
+    justifyContent: 'center',
     marginBottom: 5
   },
-  companionName: {
-    fontSize: 21.98
-  },
-  companionBirthdayContainer: {
-
-  },
-  companionBirthday: {
-
-  }
 });
