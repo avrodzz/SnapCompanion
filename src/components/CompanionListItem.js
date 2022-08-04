@@ -1,5 +1,15 @@
 import React from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
+import {
+  NativeBaseProvider,
+  Container,
+  Center,
+  VStack,
+  HStack,
+  Circle,
+  ScrollView,
+  Pressable,
+} from "native-base";
 
 export default function CompanionListItem(props) {
 
@@ -9,7 +19,18 @@ export default function CompanionListItem(props) {
             <Text style={styles.headerText}>{props.headerTextTitle}</Text>
        </View>
        <View style={styles.listContentContainer}>
-            
+          <NativeBaseProvider>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollViewContainer}>
+                <HStack space={5}>
+                  <Circle size="67.61px" bg="light.300" />
+                  <Circle size="67.61px" bg="light.300" />
+                  <Circle size="67.61px" bg="light.300" />
+                  <Circle size="67.61px" bg="light.300" />
+                  <Circle size="67.61px" bg="light.300" />
+                  <Circle size="67.61px" bg="light.300" />
+                </HStack>
+              </ScrollView>
+          </NativeBaseProvider>
        </View>
     </View>
   );
@@ -28,8 +49,10 @@ const styles = StyleSheet.create({
   },
   listContentContainer: {
     marginLeft: 23.98,
+    marginTop: 20.83,
     width: 342.04,
-    height: 100,
-    backgroundColor: '#E9E9E9'
+  },
+  scrollViewContainer: {
+    // backgroundColor: 'red',
   }
 });

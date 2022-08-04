@@ -96,7 +96,7 @@ export default function UserStack() {
         <Tab.Screen
           name="Companion Profile"
           component={CompanionProfileScreen}
-          options={screenOptions}
+          options={{...screenOptions, headerShown: false}}
         />
         <Tab.Screen
           name="Journal"
