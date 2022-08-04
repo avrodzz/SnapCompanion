@@ -1,13 +1,16 @@
 import React from "react";
-import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import { Alert, Modal, StyleSheet,Text, Pressable, View, Image, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
 import CameraButton from "../../assets/images/companionButtons/camera_button.png"
 import HeartButton from "../../assets/images/companionButtons/heart_button.png"
 import ChatButton from "../../assets/images/companionButtons/chat_button.png"
 import JournalButton from "../../assets/images/companionButtons/journal_button.png"
+import { useState } from "react";
 
 
 
 export default function CompanionButtons(props) {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [journalNameInput, onChangeJournalNameInput] = useState("");
 
   const onCameraButtonPress = () => {
     console.log('camera button press');
@@ -25,6 +28,13 @@ export default function CompanionButtons(props) {
 
   const onJournalButtonPress = () => {
     console.log('journal button press');
+    setModalVisible(true);
+  }
+
+  const onEnterKeyPressed = (e) => {
+    // if(e.nativeEvent.key === 'Enter'){
+    //     console.log('enter key pressed')
+    // }
   }
 
   return (
@@ -49,6 +59,36 @@ export default function CompanionButtons(props) {
                 <Image source={JournalButton} />
             </TouchableOpacity>
         </View>
+        <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+        // presentationStyle={"fullScreen"}
+      >
+        <SafeAreaView style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Name Your Journal</Text>
+            <View style={styles.contentInputContainer}>
+                <TextInput
+                    style={styles.contentInput}
+                    onChangeText={onChangeJournalNameInput}
+                    value={journalNameInput}
+                    // onKeyPress={(k) => onEnterKeyPressed(k)}
+                />
+            </View>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Hide</Text>
+            </Pressable>
+          </View>
+        </SafeAreaView>
+      </Modal>
     </View>
   );
 };
@@ -59,5 +99,48 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginBottom: 5
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: 'rgba(0, 0, 0, .2)'
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+  buttonClose: {
+    backgroundColor: "#FFFC00",
+  },
+  textStyle: {
+    color: 'black',
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  },
+  contentInputContainer: {
+    margin: 15,
+    backgroundColor: "#E9E9E9",
+    width: 200,
   },
 });

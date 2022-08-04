@@ -67,6 +67,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     height: 100
   },
+  contentInput: {
+
+  },
   saveButtonContainer: {
 
   },
