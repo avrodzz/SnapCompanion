@@ -1,10 +1,14 @@
 import React, { useCallback, useRef, useMemo } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Button, Image, TouchableOpacity } from "react-native";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import CompanionListHeader from "./CompanionListHeader";
+import CompanionButtons from "./CompanionButtons"
 import CompanionListItem from "./CompanionListItem";
+import maxAvatar from "../../assets/images/max_icon_green.png";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
-export default function CompanionBottomSheet() {
+
+export default function CompanionBottomSheet(props) {
   // hooks
   const sheetRef = useRef(null);
 
@@ -16,7 +20,7 @@ export default function CompanionBottomSheet() {
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "40%", "60%", "90%"], []);
+  const snapPoints = useMemo(() => [ "29%", "38%", "60%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {
@@ -40,29 +44,30 @@ export default function CompanionBottomSheet() {
   );
 
   return (
-    <View style={styles.container}>
       <BottomSheet
         ref={sheetRef}
         index={0}
         snapPoints={snapPoints}
         onChange={handleSheetChange}
+        backgroundStyle={{...styles.contentContainer}}
       >
-        <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
-          {/* {data.map(renderItem)} */}
-          <CompanionListHeader avatarSize={67.61} companionName='Max' companionBirthday='August 2, 2022' />
+        <BottomSheetScrollView contentContainerStyle={{...styles.contentContainer}}>
+          <CompanionListHeader avatarSrc={maxAvatar} avatarSize={67.61} companionName='Max' companionBirthday='August 3, 2022' />
+          {/* <View>
+          <TouchableOpacity>
+                <Ionicons name='chatbox' size={10} />;
+          </TouchableOpacity>
+            </View> */}
           <CompanionListItem headerTextTitle='Saved Journals'/>
           <CompanionListItem headerTextTitle='Resources'/>
         </BottomSheetScrollView>
       </BottomSheet>
-    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   contentContainer: {
     backgroundColor: "white",
+    borderRadius: 26.6456
   }
 });
