@@ -10,7 +10,11 @@ import { getAuth, signOut } from "firebase/auth";
 // Screens
 import MapScreen from "../screens/MapScreen";
 import CameraScreen from "../screens/CameraScreen";
+<<<<<<< HEAD
 import SpotlightStack from "./SpotlightStack";
+=======
+import SpotlightScreen from "../screens/SpotlightScreen";
+>>>>>>> origin/main
 import CompanionProfileScreen from "../screens/CompanionProfileScreen";
 import JournalScreen from "../screens/JournalScreen";
 
@@ -65,9 +69,6 @@ export default function UserStack() {
             } else if (route.name === "Camera") {
               iconName = focused ? "ios-scan-circle-outline" : "ios-camera-outline";
               iconColor = focused ? "yellow" : "grey";
-            } else if (route.name === "Stories") {
-              iconName = "ios-people-outline";
-              iconColor = focused ? "purple" : "grey";
             } else if (route.name === "Spotlight") {
               iconName = "ios-play-outline";
               iconColor = focused ? "red" : "grey";
@@ -92,14 +93,23 @@ export default function UserStack() {
         />
         
         <Tab.Screen
+<<<<<<< HEAD
           name="SpotlightStack"
           component={SpotlightStack}
           options={{...screenOptions, headerShown: false}}
         />
         <Tab.Screen
           name="CompanionProfile"
+=======
+          name="Spotlight"
+          component={SpotlightScreen}
+          options={{...screenOptions, headerShown: true}}
+        />
+        <Tab.Screen
+          name="Companion Profile"
+>>>>>>> origin/main
           component={CompanionProfileScreen}
-          options={screenOptions}
+          options={{...screenOptions, headerShown: false}}
         />
         <Tab.Screen
           name="Journal"
