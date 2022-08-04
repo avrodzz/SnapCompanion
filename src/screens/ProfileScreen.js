@@ -20,7 +20,7 @@ export default function ProfileScreen({ navigation }) {
       >
         
         <TouchableOpacity
-        onPress = {()=>navigation.navigate("Spotlight")}
+        onPress = {()=>navigation.navigate("CompanionProfileScreen")}
         >
           <Image style={styles.max} 
                  source = {require('../../assets/max.png')}/>

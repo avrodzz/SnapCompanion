@@ -3,13 +3,13 @@ import { View,Text , Image, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export default function StatBar({navigation, screen="spotlight"}) {
+export default function StatBar({navigation}) {
 
 return (
   <View style={styles.container}>
       <TouchableOpacity
       onPress={()=>{
-        navigation.navigate('SpotlightStack', { screen: 'ProfileScreen' });
+        navigation.navigate('Profile' );
       }}
       >
         <Image
@@ -22,7 +22,7 @@ return (
   </View>
 
   {/* Different titles for different screensx */}
-  {screen==="map"&&<View style={styles.barTitle} >
+  {/* {screen==="map"&&<View style={styles.barTitle} >
     <Text style={styles.barTitleText} >Map</Text>
   </View>
   }
@@ -39,8 +39,8 @@ return (
       <Text style={styles.barTitleText} >Spotlight</Text>
     </View>
   }
-
-  </View>
+*/}
+  </View> 
   );
 }
 

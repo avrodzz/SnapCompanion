@@ -9,6 +9,7 @@ import ConversationScreen from "../screens/ConversationScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import { getAuth, signOut } from "firebase/auth";
 import StatBar from "../components/StatBar";
+import CompanionProfileScreen from "../screens/CompanionProfileScreen";
 
 
 const Stack = createStackNavigator();
@@ -32,6 +33,7 @@ export default function ChatStack({ navigation }) {
         component={ChatScreen}
         options={screenOptions}
       />
+      <Stack.Screen name="CompanionProfileScreen" component={CompanionProfileScreen} options={{...screenOptions, headerShown:true}} />
       <Stack.Screen name="Conversation" component={ConversationScreen}  options={{headerShown:true}} />
       <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerTransparent:true}}/>
     </Stack.Navigator>
