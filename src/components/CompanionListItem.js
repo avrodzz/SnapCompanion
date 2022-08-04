@@ -1,11 +1,16 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import {
   NativeBaseProvider,
   HStack,
   Circle,
   ScrollView,
 } from "native-base";
+
+import Jul_14 from '../../assets/images/savedJournalButtons/jul_14_button.png'
+import Jun_23 from '../../assets/images/savedJournalButtons/jun_23_button.png'
+import Mar_8 from '../../assets/images/savedJournalButtons/mar_8_button.png'
+import Mar_2 from '../../assets/images/savedJournalButtons/mar_2_button.png'
 
 export default function CompanionListItem(props) {
 
@@ -18,12 +23,18 @@ export default function CompanionListItem(props) {
           <NativeBaseProvider>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollViewContainer}>
                 <HStack space={5}>
-                  <Circle size="67.61px" bg="light.300" />
-                  <Circle size="67.61px" bg="light.300" />
-                  <Circle size="67.61px" bg="light.300" />
-                  <Circle size="67.61px" bg="light.300" />
-                  <Circle size="67.61px" bg="light.300" />
-                  <Circle size="67.61px" bg="light.300" />
+                  <TouchableOpacity>
+                    <Image source={Jul_14} />
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <Image source={Jun_23} />
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <Image source={Mar_8} />
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <Image source={Mar_2} />
+                  </TouchableOpacity>
                 </HStack>
               </ScrollView>
           </NativeBaseProvider>
