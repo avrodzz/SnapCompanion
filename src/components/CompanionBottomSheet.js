@@ -47,7 +47,7 @@ export default function CompanionBottomSheet(props) {
   return (
       <BottomSheet
         ref={sheetRef}
-        index={0}
+        index={1}
         snapPoints={snapPoints}
         onChange={handleSheetChange}
         backgroundStyle={{...styles.contentContainer}}
