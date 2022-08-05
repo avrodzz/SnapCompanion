@@ -3,6 +3,12 @@ import { StyleSheet, View, Text, Button } from "react-native";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import CompanionListHeader from "./CompanionListHeader";
 import CompanionListItem from "./CompanionListItem";
+import catMax1 from "../../assets/catMax1.png";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Entypo from "react-native-vector-icons/Entypo";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import { TouchableOpacity } from "react-native-gesture-handler";
+
 
 export default function BottomSheetComponent() {
   // hooks
@@ -48,19 +54,44 @@ export default function BottomSheetComponent() {
       >
         <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
           {/* {data.map(renderItem)} */}
-          <CompanionListHeader avatarSize={67.61} companionName='Max' companionBirthday='August 2, 2022' />
+          <CompanionListHeader  avatarSrc={catMax1} avatarSize={67.61} companionName='Cat and Max' companionBirthday='August 3, 2022' />
           {/* <CompanionListItem headerTextTitle='Saved Journals'/>
           <CompanionListItem headerTextTitle='Resources'/> */}
+          <TouchableOpacity style={styles.iconContainer}>
+              <MaterialCommunityIcons style={{display:"inlineBlock"}} name="hanger" size={30} color="black"  />
+              <Text>Change Outfit</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconContainer}>
+          <Entypo name ="share-alternative" size={30} color="black" />
+          <Text>Share </Text>
+          </TouchableOpacity>  
+          <TouchableOpacity style={styles.iconContainer}>
+          <AntDesign name="picture" size={30} color="black" /> 
+          <Text>Pose and Background </Text>
+          </TouchableOpacity>  
+          <TouchableOpacity style={styles.iconContainer}>
+          <MaterialCommunityIcons name="face-man-profile" size={30} color="black"/> 
+          <Text>Change Selfie</Text>
+          </TouchableOpacity>  
         </BottomSheetScrollView>
       </BottomSheet>
   );
 };
 
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
   },
   contentContainer: {
-    backgroundColor: "white",
-  }
+    // display:'flex', 
+    // flexDirection: 'row'
+  },
+  iconContainer: {
+    display:"flex", 
+    flexDirection:"row",
+     alignItems:"center", 
+     justifyContent:"left"
+  },
 });
