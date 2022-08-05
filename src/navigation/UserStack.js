@@ -16,7 +16,6 @@ import JournalScreen from "../screens/JournalScreen";
 
 // Stacks
 import ChatStack from "./ChatStack";
-import StoriesStack from "./StoriesStack";
 
 
 const Tab = createBottomTabNavigator();
