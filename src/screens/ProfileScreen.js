@@ -1,49 +1,38 @@
-
-
-import * as React from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView , ImageBackground, Image} from 'react-native';
+import React from 'react';
+import { StyleSheet, SafeAreaView , ImageBackground, Image} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import BitmojiBottomSheet from '../components/BitmojiBottomSheet';
 
 
 export default function ProfileScreen({ navigation }) {
   return (
-    <SafeAreaView style={{...styles.homeScreen}}>
+    <SafeAreaView style={styles.container}>
       <ImageBackground
       style={{
-        resizeMode: "cover",
-        height: 500,
-        width: 400,
-        marginTop:50
+        height: 650,
+        width: 390,
       }}
-      source={require('../../assets/bitmoji-cat.png')} 
+      source={require('../../assets/images/bitmoji/bitmoji_cat.png')} 
+      resizeMode={'cover'}
       >
         
-        <TouchableOpacity
+      <TouchableOpacity
         onPress = {()=>navigation.navigate("CompanionProfileScreen")}
         >
-          <Image style={styles.max} 
-                 source = {require('../../assets/max.png')}/>
-        </TouchableOpacity>
-
+        <Image style={styles.max} source = {require('../../assets/images/bitmoji/max.png')}/>
+      </TouchableOpacity>
     </ImageBackground>
-      <BitmojiBottomSheet />
+    
+    <BitmojiBottomSheet />
 
        
     </SafeAreaView>
-   
-    // <View style={styles.homeScreen}>
-    
-    //   {/* <Text style={styles.homeScreenText}>Profile Screen</Text> */}
-    //   <CompanionBottomSheet />
-      
-    // </View>
   );
 }
 
 
 const styles = StyleSheet.create({
-  homeScreen: {
+  container: {
     flex: 1, 
   },
   homeScreenText: {
@@ -54,8 +43,7 @@ const styles = StyleSheet.create({
   max: {
     width: 130,
     height: 400,
-    position: 'fixed',
     marginLeft: "65%",
-    marginTop: "54%",
+    marginTop: "80%",
   },
 });

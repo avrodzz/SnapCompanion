@@ -16,8 +16,8 @@ export default function SpotlightStack({ navigation }) {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="CompanionProfileScreen" component={CompanionProfileScreen} options={{...screenOptions, headerShown:true}} />
-      <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{...screenOptions, headerTransparent:true}}/>
+      <Stack.Screen name="CompanionProfileScreen" component={CompanionProfileScreen} options={{...screenOptions, headerShown: false}} />
+      <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{...screenOptions, headerTransparent: false}} />
     </Stack.Navigator>
   );
 }

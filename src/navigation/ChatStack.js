@@ -33,9 +33,9 @@ export default function ChatStack({ navigation }) {
         component={ChatScreen}
         options={screenOptions}
       />
-      <Stack.Screen name="CompanionProfileScreen" component={CompanionProfileScreen} options={{...screenOptions, headerShown:true}} />
-      <Stack.Screen name="Conversation" component={ConversationScreen}  options={{headerShown:true}} />
-      <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerTransparent:true}}/>
+      <Stack.Screen name="CompanionProfileScreen" component={CompanionProfileScreen} options={{...screenOptions, headerShown: false}} />
+      <Stack.Screen name="Conversation" component={ConversationScreen}  options={{headerShown: true}} />
+      <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}}/>
     </Stack.Navigator>
   );
 }

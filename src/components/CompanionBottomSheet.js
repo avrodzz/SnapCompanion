@@ -4,8 +4,7 @@ import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import CompanionListHeader from "./CompanionListHeader";
 import CompanionButtons from "./CompanionButtons"
 import CompanionListItem from "./CompanionListItem";
-import maxAvatar from "../../assets/images/max_icon_green.png";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import maxAvatar from "../../assets/images/companion/max_icon_green.png";
 import CompanionResourcesItem from "./CompanionResourcesItem";
 
 
@@ -21,7 +20,7 @@ export default function CompanionBottomSheet(props) {
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "22%", "38%", "60%"], []);
+  const snapPoints = useMemo(() => [ "22%", "40%", "60%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {

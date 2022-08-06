@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import {
   NativeBaseProvider,
   HStack,
-  Circle,
   ScrollView,
 } from "native-base";
 

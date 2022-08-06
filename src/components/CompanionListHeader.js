@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, View, Text, Button, Image } from "react-native";
-// import UserAvatar from 'react-native-user-avatar';
 import { Avatar, NativeBaseProvider } from "native-base";
 
 
