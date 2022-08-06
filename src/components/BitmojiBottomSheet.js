@@ -1,12 +1,12 @@
 import React, { useCallback, useRef, useMemo } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
-import CompanionListHeader from "./CompanionListHeader";
 import Cat_Max from "../../assets/images/bitmoji/cat_max_green.png";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Entypo from "react-native-vector-icons/Entypo";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import BitmojiListHeader from "./BitmojiListHeader";
 
 
 export default function BitmojiBottomSheet() {
@@ -51,8 +51,8 @@ export default function BitmojiBottomSheet() {
         snapPoints={snapPoints}
         onChange={handleSheetChange}
       >
-        <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
-          <CompanionListHeader  avatarSrc={Cat_Max} avatarSize={67.61} companionName='Cat and Max' companionBirthday='August 3, 2022' />
+        <BottomSheetScrollView contentContainerStyle={styles.contentContainer} >
+          <BitmojiListHeader avatarSrc={Cat_Max} avatarSize={67.61} name='Cat Tolentino' username='catandnova'/>
           <TouchableOpacity style={styles.iconContainer}>
               <MaterialCommunityIcons style={{display:"inlineBlock"}} name="hanger" size={30} color="black"  />
               <Text>Change Outfit</Text>
