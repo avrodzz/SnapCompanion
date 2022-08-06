@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { Avatar, NativeBaseProvider } from "native-base";
+import { Avatar } from "@rneui/themed";
 
 
 export default function BitmojiListHeader(props) {
@@ -8,9 +8,7 @@ export default function BitmojiListHeader(props) {
   return (
     <View style={styles.container}>
         <View style={styles.avatarContainer}>
-          <NativeBaseProvider>
-            <Avatar source={props.avatarSrc} />
-          </NativeBaseProvider>
+          <Avatar rounded source={props.avatarSrc} size={props.avatarSize} />
         </View>
        
         <View style={styles.headerTextContainer}>

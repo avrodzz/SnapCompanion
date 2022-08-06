@@ -17,7 +17,7 @@ export default function CompanionButtons(props) {
 
   const onChatButtonPress = () => {
     console.log('chat button press');
-    props.navigation.navigate('ChatStack');
+    props.navigation.popToTop();
   }
 
   const onHeartButtonPress = () => {

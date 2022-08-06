@@ -1,13 +1,14 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Image } from "react-native";
 import CompanionBottomSheet from "../components/CompanionBottomSheet";
-import maxPhone from "../../assets/images/companion/iphone_size_max_green.png"
 
 export default function CompanionProfileScreen({ navigation, route }) {
+  const { companionName, companionImageSrc, companionAvatarSrc, companionBirthday } = route.params;
+
   return(
     <SafeAreaView style={styles.container}>
-      <Image source={maxPhone} />
-      <CompanionBottomSheet navigation={navigation} />
+      <Image source={companionImageSrc} />
+      <CompanionBottomSheet companionAvatarSrc={companionAvatarSrc} companionName={companionName} companionBirthday={companionBirthday} navigation={navigation} />
     </SafeAreaView>
   )
 }
