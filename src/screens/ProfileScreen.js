@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, SafeAreaView , ImageBackground, Image} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import BitmojiBottomSheet from '../components/BitmojiBottomSheet';
+import Bitmoji_Cat from '../../assets/images/bitmoji/bitmoji_cat.png'
+import Max from '../../assets/images/bitmoji/max.png'
 
 
 export default function ProfileScreen({ navigation }) {
@@ -16,14 +18,14 @@ export default function ProfileScreen({ navigation }) {
         height: 650,
         width: 390,
       }}
-      source={require('../../assets/images/bitmoji/bitmoji_cat.png')} 
+      source={Bitmoji_Cat} 
       resizeMode={'cover'}
       >
         
       <TouchableOpacity
         onPress = {onMaxPress}
         >
-        <Image style={styles.max} source = {require('../../assets/images/bitmoji/max.png')}/>
+        <Image style={styles.max} source={Max} />
       </TouchableOpacity>
     </ImageBackground>
     
