@@ -5,6 +5,10 @@ import BitmojiBottomSheet from '../components/BitmojiBottomSheet';
 
 
 export default function ProfileScreen({ navigation }) {
+  const onMaxPress = () => {
+    navigation.navigate("CompanionProfileScreen")
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
@@ -17,15 +21,14 @@ export default function ProfileScreen({ navigation }) {
       >
         
       <TouchableOpacity
-        onPress = {()=>navigation.navigate("CompanionProfileScreen")}
+        onPress = {onMaxPress}
         >
         <Image style={styles.max} source = {require('../../assets/images/bitmoji/max.png')}/>
       </TouchableOpacity>
     </ImageBackground>
     
     <BitmojiBottomSheet />
-
-       
+ 
     </SafeAreaView>
   );
 }
