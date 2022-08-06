@@ -8,8 +8,10 @@ import VoiceButton from "../../assets/images/journalButtons/voice_button_yellow.
 import JournalButton from "../../assets/images/journalButtons/journal_button_yellow.png"
 
 export default function JournalScreen({route}) {
-//   const [journalName, setJournalName] = useState("");
-  const { journalName } = route.params;
+  
+  if(route.params){
+    const { journalName } = route.params;
+  }
   const [contentInput, onChangeContentInput] = useState("");
   const { user, userData } = useAuthentication();
 
