@@ -32,7 +32,7 @@ export default function CompanionButtons(props) {
 
   const onSubmitButtonPress = () => {
     setModalVisible(false);
-    props.navigation.navigate('Journal', {
+    props.navigation.navigate("Journal", {
         journalName: journalNameInput
     })
     onChangeJournalNameInput("");

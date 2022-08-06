@@ -16,6 +16,7 @@ import JournalScreen from "../screens/JournalScreen";
 
 // Stacks
 import ChatStack from "./ChatStack";
+import StoriesScreen from "../screens/StoriesScreen";
 
 
 const Tab = createBottomTabNavigator();
@@ -68,6 +69,9 @@ export default function UserStack() {
             } else if (route.name === "Spotlight") {
               iconName = "ios-play-outline";
               iconColor = focused ? "red" : "grey";
+            } else if (route.name === "Stories") {
+              iconName = "ios-people-outline";
+              iconColor = focused ? "red" : "grey";
             } else if (route.name === "Companion Profile") {
               iconName = "ios-paw-outline";
               iconColor = focused ? "red" : "grey"
@@ -88,15 +92,20 @@ export default function UserStack() {
           options={{...screenOptions, headerShown: false}} 
         />
         <Tab.Screen
+          name="Stories"
+          component={StoriesScreen}
+          options={{...screenOptions, headerShown: true}}
+        />
+        <Tab.Screen
           name="Spotlight"
           component={SpotlightScreen}
           options={{...screenOptions, headerShown: true}}
         />
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Companion Profile"
           component={CompanionProfileScreen}
           options={{...screenOptions, headerShown: false}}
-        />
+        /> */}
         {/* <Tab.Screen
           name="Journal"
           component={JournalScreen}

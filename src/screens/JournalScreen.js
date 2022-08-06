@@ -8,9 +8,6 @@ import VoiceButton from "../../assets/images/journalButtons/voice_button_yellow.
 import JournalButton from "../../assets/images/journalButtons/journal_button_yellow.png"
 
 export default function JournalScreen({route}) {
-  
-  const { journalName } = route.params;
-  
   const [contentInput, onChangeContentInput] = useState("");
   const { user, userData } = useAuthentication();
 
@@ -19,6 +16,7 @@ export default function JournalScreen({route}) {
   };
 
   const onSave = () => {
+    const { journalName } = route.params;
     const userRef = doc(db, "Users", user.uid);
     console.log('userRef', userRef.path)
     if(journalName){
@@ -37,9 +35,7 @@ export default function JournalScreen({route}) {
   return(
     <SafeAreaView style={styles.container}>
         <View style={styles.titleTextContainer}>
-           {/* <Text style={styles.titleText}>{journalName ? journalName : 'Title'}</Text>  */}
            <Text style={styles.titleText}>Snap Journal</Text>
-           {/* <Text style={styles.journalNameText}>{journalName}</Text> */}
         </View>
         <View style={styles.contentInputContainer}>
             <TextInput
