@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, TouchableOpacity, StyleSheet, Button } from "react-native";
-import { collection, doc, getDocs, updateDoc, arrayUnion } from "firebase/firestore";
+import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { collection, getDocs } from "firebase/firestore";
 import db from "../../firebase";
-import { useAuthentication } from "../utils/hooks/useAuthentication";
-
-
 import Ionicons from "react-native-vector-icons/Ionicons";
-import StatBar from "../components/StatBar";
-import CompanionBottomSheet from "../components/CompanionBottomSheet";
 
 export default function ChatScreen({ navigation}) {
   const [users, setUsers] = useState([]);
-  
-  // const { user, userData } = useAuthentication();
 
   const MESSAGE = {
     _id: '2',
@@ -89,7 +82,7 @@ export default function ChatScreen({ navigation}) {
           </TouchableOpacity>
         );
       })}
-      <Button title='button' onPress={() => {
+      {/* <Button title='button' onPress={() => {
         const chatRef = doc(db, "Chats", "Companion");
 
         updateDoc(chatRef, {
@@ -97,7 +90,7 @@ export default function ChatScreen({ navigation}) {
           messages: arrayUnion(MESSAGE),
         });
       }
-        }>Click Me</Button>
+        }>Click Me</Button> */}
     </View>
   );
 }
@@ -130,6 +123,3 @@ const styles = StyleSheet.create({
     top: 10,
   },
 });
-
-
-
