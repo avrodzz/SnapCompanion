@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { collection, getDocs } from "firebase/firestore";
 import db from "../../firebase";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import Cat from '../../assets/cat.png'
+import { Avatar, NativeBaseProvider } from "native-base";
 
 export default function ChatScreen({ navigation}) {
   const [users, setUsers] = useState([]);
@@ -66,12 +68,17 @@ export default function ChatScreen({ navigation}) {
             key={user}
           >
             
-            <Ionicons
+            {/* <Ionicons
               style={styles.userIcon}
               name="ios-person-outline"
               size={36}
               color="lightgrey"
-            />
+            /> */}
+            <TouchableOpacity style={styles.userIcon}>
+              <NativeBaseProvider>
+                <Avatar source={require('../../assets/images/companion/max_icon_green.png')} />
+              </NativeBaseProvider>
+            </TouchableOpacity>
             <Text style={styles.userName}> {user} </Text>
             <Ionicons
               style={styles.userCamera}
@@ -110,6 +117,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 5,
     top: 5,
+    width: 67.61,
+    height: 67.61
   },
   userName: {
     position: "absolute",

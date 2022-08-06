@@ -97,11 +97,11 @@ export default function UserStack() {
           component={CompanionProfileScreen}
           options={{...screenOptions, headerShown: false}}
         />
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Journal"
           component={JournalScreen}
           options={{...screenOptions, headerShown: false}}
-        />
+        /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );

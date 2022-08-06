@@ -27,6 +27,7 @@ export default function CompanionButtons(props) {
   const onJournalButtonPress = () => {
     console.log('journal button press');
     setModalVisible(true);
+    props.navigation.navigate('Journal')
   }
 
   const onSubmitButtonPress = () => {

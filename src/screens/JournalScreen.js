@@ -9,9 +9,8 @@ import JournalButton from "../../assets/images/journalButtons/journal_button_yel
 
 export default function JournalScreen({route}) {
   
-  if(route.params){
-    const { journalName } = route.params;
-  }
+  const { journalName } = route.params;
+  
   const [contentInput, onChangeContentInput] = useState("");
   const { user, userData } = useAuthentication();
 
