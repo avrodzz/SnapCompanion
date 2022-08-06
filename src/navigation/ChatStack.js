@@ -1,12 +1,13 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { Button } from "react-native";
+
 
 // Screens
 import ChatScreen from "../screens/ChatScreen";
 import ConversationScreen from "../screens/ConversationScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import JournalScreen from "../screens/JournalScreen";
 import { getAuth, signOut } from "firebase/auth";
 import StatBar from "../components/StatBar";
 import CompanionProfileScreen from "../screens/CompanionProfileScreen";
@@ -21,7 +22,8 @@ export default function ChatStack({ navigation }) {
 
   let screenOptions = {
     tabBarShowLabel: false,
-    headerLeft: () => (
+    // headerShown: false,
+    header: () => (
       <StatBar screen="chat" navigation={navigation} />
     ),
   };
@@ -33,9 +35,10 @@ export default function ChatStack({ navigation }) {
         component={ChatScreen}
         options={screenOptions}
       />
-      <Stack.Screen name="CompanionProfileScreen" component={CompanionProfileScreen} options={{...screenOptions, headerShown:true}} />
-      <Stack.Screen name="Conversation" component={ConversationScreen}  options={{headerShown:true}} />
-      <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerTransparent:true}}/>
+      <Stack.Screen name="CompanionProfileScreen" component={CompanionProfileScreen} options={{...screenOptions, headerShown: false}} />
+      <Stack.Screen name="Conversation" component={ConversationScreen}  options={{...screenOptions, headerShown: false}} />
+      <Stack.Screen name="Profile" component={ProfileScreen} options={{...screenOptions, headerShown: false}}/>
+      <Stack.Screen name="Journal" component={JournalScreen} options={{...screenOptions, headerShown: false}}/>
     </Stack.Navigator>
   );
 }

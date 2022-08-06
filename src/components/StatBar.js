@@ -9,7 +9,7 @@ return (
   <View style={styles.container}>
       <TouchableOpacity
       onPress={()=>{
-        navigation.navigate('Profile' );
+        navigation.navigate('Profile');
       }}
       >
         <Image
@@ -19,6 +19,10 @@ return (
       </TouchableOpacity>
   <View style={styles.iconContainer} >
     <Icon name="search" size={15} color="#ffffff" />
+  </View>
+
+  <View style={styles.barTitle} >
+      <Text style={styles.barTitleText} >Chat</Text>
   </View>
 
   {/* Different titles for different screensx */}
@@ -71,13 +75,13 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor:"rgba(104,104,104, 0.55)",
     borderRadius:35,
-    marginLeft:10,
+    marginLeft:12,
   },
   barTitle:{
     width:150,
     height:40,
     backgroundColor:"rgba(104,104,104, 0.55)",
-    marginLeft:10,
+    marginLeft:21,
     display:"flex",
     justifyContent:"center",
     alignItems:"center", 

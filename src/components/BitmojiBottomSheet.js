@@ -1,16 +1,15 @@
 import React, { useCallback, useRef, useMemo } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
-import CompanionListHeader from "./CompanionListHeader";
-import CompanionListItem from "./CompanionListItem";
-import catMax1 from "../../assets/catMax1.png";
+import Cat_Max from "../../assets/images/bitmoji/cat_max_green.png";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Entypo from "react-native-vector-icons/Entypo";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import BitmojiListHeader from "./BitmojiListHeader";
 
 
-export default function BottomSheetComponent() {
+export default function BitmojiBottomSheet() {
   // hooks
   const sheetRef = useRef(null);
 
@@ -22,7 +21,7 @@ export default function BottomSheetComponent() {
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "23%","40%", "60%"], []);
+  const snapPoints = useMemo(() => [ "12%","40%", "60%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {
@@ -52,11 +51,8 @@ export default function BottomSheetComponent() {
         snapPoints={snapPoints}
         onChange={handleSheetChange}
       >
-        <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
-          {/* {data.map(renderItem)} */}
-          <CompanionListHeader  avatarSrc={catMax1} avatarSize={67.61} companionName='Cat and Max' companionBirthday='August 3, 2022' />
-          {/* <CompanionListItem headerTextTitle='Saved Journals'/>
-          <CompanionListItem headerTextTitle='Resources'/> */}
+        <BottomSheetScrollView contentContainerStyle={styles.contentContainer} >
+          <BitmojiListHeader avatarSrc={Cat_Max} avatarSize={67.61} name='Cat Tolentino' username='catandnova'/>
           <TouchableOpacity style={styles.iconContainer}>
               <MaterialCommunityIcons style={{display:"inlineBlock"}} name="hanger" size={30} color="black"  />
               <Text>Change Outfit</Text>
@@ -80,7 +76,6 @@ export default function BottomSheetComponent() {
 };
 
 const styles = StyleSheet.create({
-  
   container: {
     flex: 1,
   },

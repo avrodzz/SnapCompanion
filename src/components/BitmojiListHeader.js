@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from "react-native";
 import { Avatar, NativeBaseProvider } from "native-base";
 
 
-export default function CompanionListHeader(props) {
+export default function BitmojiListHeader(props) {
 
   return (
     <View style={styles.container}>
@@ -14,11 +14,11 @@ export default function CompanionListHeader(props) {
         </View>
        
         <View style={styles.headerTextContainer}>
-            <View style={styles.companionNameContainer}>
-                <Text style={styles.companionName}>{props.companionName}</Text>
+            <View style={styles.nameContainer}>
+                <Text style={styles.name}>{props.name}</Text>
             </View>
-            <View style={styles.companionBirthdayContainer}>
-                <Text style={styles.companionBirthday}>Your companion since {props.companionBirthday}</Text>
+            <View style={styles.usernameContainer}>
+                <Text style={styles.username}>{props.username}</Text>
             </View>
         </View>
     </View>
@@ -38,17 +38,17 @@ const styles = StyleSheet.create({
   headerTextContainer: {
 
   },
-  companionNameContainer: {
+  nameContainer: {
     marginTop: 5,
     marginBottom: 5
   },
-  companionName: {
+  name: {
     fontSize: 21.98
   },
-  companionBirthdayContainer: {
+  usernameContainer: {
 
   },
-  companionBirthday: {
+  username: {
 
   }
 });

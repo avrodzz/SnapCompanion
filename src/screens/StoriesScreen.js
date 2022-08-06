@@ -14,13 +14,13 @@ const StoriesScreen = ({ navigation }) => {
 
   return (
       <View>
-      <View style={{ height:93}}>
+      {/* <View style={{ height:93}}>
         <StatBar screen="map" navigation={navigation} />
       </View>
         
         <Text>
           Stories Page
-        </Text>
+        </Text> */}
       </View>
   )
 }
