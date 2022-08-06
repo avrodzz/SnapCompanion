@@ -3,8 +3,9 @@ import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { collection, getDocs } from "firebase/firestore";
 import db from "../../firebase";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import Cat from '../../assets/cat.png'
-import { Avatar, NativeBaseProvider } from "native-base";
+// import Cat from '../../assets/cat.png'
+import Max from '../../assets/images/companion/max_icon_green.png'
+import { Avatar } from "@rneui/themed";
 
 export default function ChatScreen({ navigation }) {
   const [users, setUsers] = useState([]);
@@ -67,17 +68,8 @@ export default function ChatScreen({ navigation }) {
             }}
             key={user}
           >
-            
-            {/* <Ionicons
-              style={styles.userIcon}
-              name="ios-person-outline"
-              size={36}
-              color="lightgrey"
-            /> */}
             <TouchableOpacity style={styles.userIcon}>
-              <NativeBaseProvider>
-                <Avatar source={require('../../assets/images/companion/max_icon_green.png')} />
-              </NativeBaseProvider>
+                <Avatar rounded source={Max} size={67.61} />
             </TouchableOpacity>
             <Text style={styles.userName}> {user} </Text>
             <Ionicons
@@ -89,6 +81,7 @@ export default function ChatScreen({ navigation }) {
           </TouchableOpacity>
         );
       })}
+
       {/* <Button title='button' onPress={() => {
         const chatRef = doc(db, "Chats", "Companion");
 
