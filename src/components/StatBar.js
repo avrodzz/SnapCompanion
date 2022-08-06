@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   bitmojiImage:{
-    width: 40,
-    height: 40,
+    width: 67.61,
+    height: 67.61,
     marginLeft:10,
   }, 
   iconContainer:{
@@ -75,13 +75,14 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor:"rgba(104,104,104, 0.55)",
     borderRadius:35,
-    marginLeft:12,
+    marginTop: 10,
   },
   barTitle:{
     width:150,
     height:40,
     backgroundColor:"rgba(104,104,104, 0.55)",
-    marginLeft:21,
+    marginTop: 10,
+    marginLeft:6,
     display:"flex",
     justifyContent:"center",
     alignItems:"center", 

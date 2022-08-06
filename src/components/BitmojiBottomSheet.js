@@ -21,7 +21,12 @@ export default function BitmojiBottomSheet() {
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "13.5%","40%", "60%"], []);
+
+  // Does not show bitmoji options page
+  const snapPoints = useMemo(() => ["13.5%"], []);
+
+  // // Does show bitmoji options on page (if we do not have time to style use the snap points above)
+  // const snapPoints = useMemo(() => ["13.5%","40%", "60%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {
