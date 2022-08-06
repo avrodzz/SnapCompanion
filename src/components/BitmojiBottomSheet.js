@@ -21,7 +21,7 @@ export default function BitmojiBottomSheet() {
         .map((_, index) => `index-${index}`),
     []
   );
-  const snapPoints = useMemo(() => [ "12%","40%", "60%"], []);
+  const snapPoints = useMemo(() => [ "13.5%","40%", "60%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {

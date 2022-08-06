@@ -4,7 +4,7 @@ import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import CompanionListHeader from "./CompanionListHeader";
 import CompanionButtons from "./CompanionButtons"
 import CompanionListItem from "./CompanionListItem";
-import maxAvatar from "../../assets/images/companion/max_icon_green.png";
+// import maxAvatar from "../../assets/images/companion/max_icon_green.png";
 import CompanionResourcesItem from "./CompanionResourcesItem";
 
 
@@ -52,7 +52,7 @@ export default function CompanionBottomSheet(props) {
         backgroundStyle={{...styles.contentContainer}}
       >
         <BottomSheetScrollView contentContainerStyle={{...styles.contentContainer}}>
-          <CompanionListHeader avatarSrc={maxAvatar} avatarSize={67.61} companionName='Max' companionBirthday='August 3, 2022' />
+          <CompanionListHeader avatarSrc={props.companionAvatarSrc} avatarSize={67.61} companionName={props.companionName} companionBirthday={props.companionBirthday} />
           <CompanionButtons navigation={props.navigation} />
           <CompanionListItem headerTextTitle='Saved Journals'/>
           <CompanionResourcesItem headerTextTitle='Resources' />

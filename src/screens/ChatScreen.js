@@ -6,35 +6,35 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Cat from '../../assets/cat.png'
 import { Avatar, NativeBaseProvider } from "native-base";
 
-export default function ChatScreen({ navigation}) {
+export default function ChatScreen({ navigation }) {
   const [users, setUsers] = useState([]);
 
-  const MESSAGE = {
-    _id: '2',
-    text: 'This is a quick reply. Do you love Gifted Chat? (checkbox)',
-    createdAt: new Date(),
-    quickReplies: {
-      type: 'checkbox', // or 'radio',
-      values: [
-        {
-          title: 'Yes',
-          value: 'yes',
-        },
-        {
-          title: 'Yes, let me show you with a picture!',
-          value: 'yes_picture',
-        },
-        {
-          title: 'Nope. What?',
-          value: 'no',
-        },
-      ],
-    },
-    user: {
-      _id: '2',
-      name: 'React Native',
-    },
-  }
+  // const MESSAGE = {
+  //   _id: '2',
+  //   text: 'This is a quick reply. Do you love Gifted Chat? (checkbox)',
+  //   createdAt: new Date(),
+  //   quickReplies: {
+  //     type: 'checkbox', // or 'radio',
+  //     values: [
+  //       {
+  //         title: 'Yes',
+  //         value: 'yes',
+  //       },
+  //       {
+  //         title: 'Yes, let me show you with a picture!',
+  //         value: 'yes_picture',
+  //       },
+  //       {
+  //         title: 'Nope. What?',
+  //         value: 'no',
+  //       },
+  //     ],
+  //   },
+  //   user: {
+  //     _id: '2',
+  //     name: 'React Native',
+  //   },
+  // }
   
 
   async function getUsers() {
@@ -52,7 +52,7 @@ export default function ChatScreen({ navigation}) {
 
   return (
     <View style={styles.container}>
-       <View style={{ height:93}}>
+      <View style={{ height:93}}>
        
       </View>
         
