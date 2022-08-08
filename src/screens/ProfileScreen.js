@@ -6,6 +6,7 @@ import Bitmoji_Cat from '../../assets/images/bitmoji/bitmoji_cat.png'
 import Max from '../../assets/images/bitmoji/max.png'
 import maxPhone from "../../assets/images/companion/iphone_size_max_green.png"
 import maxAvatar from "../../assets/images/companion/max_icon_green.png";
+import shareButton from "../../assets/images/bitmojiIcons/shareButton.png";
 
 
 export default function ProfileScreen({ navigation }) {
@@ -28,6 +29,9 @@ export default function ProfileScreen({ navigation }) {
       source={Bitmoji_Cat} 
       resizeMode={'cover'}
       >
+        <TouchableOpacity>
+          <Image source={shareButton} style={{height:50, width: 120, marginLeft: 255, marginTop: 10}}/>
+        </TouchableOpacity>
         
       <TouchableOpacity
         onPress = {onMaxPress}
@@ -56,6 +60,6 @@ const styles = StyleSheet.create({
     width: 130,
     height: 400,
     marginLeft: "65%",
-    marginTop: "80%",
+    marginTop: "70%",
   },
 });
