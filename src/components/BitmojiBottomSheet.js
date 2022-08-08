@@ -1,10 +1,9 @@
 import React, { useCallback, useRef, useMemo } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Button, Image } from "react-native";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import Cat_Max from "../../assets/images/bitmoji/cat_max_green.png";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import Entypo from "react-native-vector-icons/Entypo";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+
 import { TouchableOpacity } from "react-native-gesture-handler";
 import BitmojiListHeader from "./BitmojiListHeader";
 
@@ -26,7 +25,7 @@ export default function BitmojiBottomSheet() {
   // const snapPoints = useMemo(() => ["13.5%"], []);
 
   // Does show bitmoji options on page (if we do not have time to style use the snap points above)
-  const snapPoints = useMemo(() => ["13.5%","40%", "60%"], []);
+  const snapPoints = useMemo(() => ["13.5%","40%"], []);
 
   // callbacks
   const handleSheetChange = useCallback((index) => {
@@ -59,22 +58,44 @@ export default function BitmojiBottomSheet() {
         <BottomSheetScrollView contentContainerStyle={styles.contentContainer} >
           <BitmojiListHeader avatarSrc={Cat_Max} avatarSize={67.61} name='Cat Tolentino' username='catandnova'/>
           <TouchableOpacity style={styles.iconContainer}>
-              <MaterialCommunityIcons style={{display:"inlineBlock"}} name="hanger" size={30} color="black"  />
-              <Text>Change Outfit</Text>
+          <Image source={require('../../assets/images/bitmojiIcons/hanger.png')} style={{height:40,width:40}}></Image>
+              <Text style={styles.textContent}>   Change Outfit</Text>
+              <MaterialIcons name="arrow-forward-ios" size={23} color="gray" style={{marginLeft:155}}></MaterialIcons>
           </TouchableOpacity>
-
+          <View
+  style={{
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.5,
+  }}
+/>
           <TouchableOpacity style={styles.iconContainer}>
-          <Entypo name ="share-alternative" size={30} color="black" />
-          <Text>Share </Text>
+          <Image source={require('../../assets/images/bitmojiIcons/share.png')} style={{height:40,width:40}}></Image>
+          <Text style={styles.textContent} >   Share </Text>
+          <MaterialIcons name="arrow-forward-ios" size={23} color="gray" style={{marginLeft:213}}></MaterialIcons>
           </TouchableOpacity>  
+          <View
+  style={{
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.5,
+  }}
+/>
           <TouchableOpacity style={styles.iconContainer}>
-          <AntDesign name="picture" size={30} color="black" /> 
-          <Text>Pose and Background </Text>
+          <Image source={require('../../assets/images/bitmojiIcons/image.png')} style={{height:40,width:40}}></Image>
+          <Text style={styles.textContent}>   Pose and Background </Text>
+          <MaterialIcons name="arrow-forward-ios" size={23} color="gray" style={{marginLeft:92}}></MaterialIcons>
           </TouchableOpacity>  
+          <View
+  style={{
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.5,
+  }}
+/>
           <TouchableOpacity style={styles.iconContainer}>
-          <MaterialCommunityIcons name="face-man-profile" size={30} color="black"/> 
-          <Text>Change Selfie</Text>
-          </TouchableOpacity>  
+          <Image source={require('../../assets/images/bitmojiIcons/selfie.png')} style={{height:40,width:40}}></Image>
+          <Text style={styles.textContent}>   Change Selfie</Text>
+          <MaterialIcons name="arrow-forward-ios" size={23} color="gray" style={{marginLeft:157}}></MaterialIcons>
+          </TouchableOpacity>   
+        
         </BottomSheetScrollView>
       </BottomSheet>
   );
@@ -92,6 +113,14 @@ const styles = StyleSheet.create({
     display:"flex", 
     flexDirection:"row",
      alignItems:"center", 
-     justifyContent:"left"
+     justifyContent:"left",
+     marginLeft: 33,
+     padding: 4,
+    //  borderWidth: 0.2,
+    //  borderColor: "#D3D3D3",
+     
   },
+  textContent:{
+    fontSize: 17,
+  }
 });
