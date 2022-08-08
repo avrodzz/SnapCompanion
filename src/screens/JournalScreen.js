@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, View, Text, Button, TextInput, Image, TouchableOpacity } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, Button, TextInput, Image, TouchableOpacity, ImageBackground } from "react-native";
 import { doc, setDoc, updateDoc } from "firebase/firestore";
 import db from "../../firebase";
 import { useAuthentication } from "../utils/hooks/useAuthentication";
 import CameraButton from "../../assets/images/journalButtons/camera_button_yellow.png"
 import VoiceButton from "../../assets/images/journalButtons/voice_button_yellow.png"
 import JournalButton from "../../assets/images/journalButtons/journal_button_yellow.png"
+import JournalBackground from "../../assets/images/journalButtons/snap_journal_background_more_space.png"
 
 export default function JournalScreen({route}) {
   const [contentInput, onChangeContentInput] = useState("");
@@ -34,9 +35,11 @@ export default function JournalScreen({route}) {
 
   return(
     <SafeAreaView style={styles.container}>
-        <View style={styles.titleTextContainer}>
+      {/* <TouchableOpacity style=></TouchableOpacity> */}
+      <ImageBackground source={JournalBackground} style={styles.image}>
+        {/* <View style={styles.titleTextContainer}>
            <Text style={styles.titleText}>Snap Journal</Text>
-        </View>
+        </View> */}
         <View style={styles.contentInputContainer}>
             <TextInput
                 style={styles.contentInput}
@@ -63,8 +66,12 @@ export default function JournalScreen({route}) {
             </View>
         </View>
         <View style={styles.saveButtonContainer}>
-            <Button title='Save' style={styles.saveButton} onPress={onSave} />
+            {/* <Button title='Save' style={styles.saveButton} onPress={onSave} /> */}
+            <TouchableOpacity onPress={onSave}>
+              <Text>Save</Text>
+            </TouchableOpacity>
         </View>
+      </ImageBackground>
     </SafeAreaView>
   )
 }
@@ -73,7 +80,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
+    paddingBottom: 15
   },
   titleTextContainer: {
     marginTop: 15,
@@ -84,14 +96,13 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   contentInputContainer: {
-    marginTop: 15,
+    marginTop: 80,
     marginLeft: 15,
     marginRight: 15,
     backgroundColor: "#FFF",
     height: 500,
     borderWidth: 1,
     borderRadius: 26.6456,
-    // justifyContent: 'center'
   },
   contentInput: {
     padding: 10
@@ -103,10 +114,14 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   saveButtonContainer: {
+    marginTop: 20,
     marginBottom: 10,
-    color: 'black'
+    color: 'black',
+    flexDirection: 'row',
+    justifyContent: 'center'
   },
   saveButton: {
-    color: '#000'
+    color: 'red',
+    marginBottom: 10
   }
 });
