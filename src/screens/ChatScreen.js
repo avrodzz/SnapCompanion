@@ -6,10 +6,17 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import maxPhone from "../../assets/images/companion/iphone_size_max_green.png"
 import maxAvatar from "../../assets/images/companion/max_icon_green.png";
 import { Avatar } from "@rneui/themed";
+import Kenny from "../../assets/images/bitmoji/kenny.png";
+import Alexis from "../../assets/images/bitmoji/alexis.png";
+import Nelson from "../../assets/images/bitmoji/nelson.png";
+import Andres from "../../assets/images/bitmoji/andres.png";
+
+
+
 
 export default function ChatScreen({ navigation }) {
   const [users, setUsers] = useState([]);
-
+  const bitmojiAvatar = [Alexis,Andres,Kenny,maxAvatar,Nelson];
   // const MESSAGE = {
   //   _id: '2',
   //   text: 'This is a quick reply. Do you love Gifted Chat? (checkbox)',
@@ -64,8 +71,9 @@ export default function ChatScreen({ navigation }) {
        
       </View>
         
-      {users?.map((user) => {
+      {users?.map((user,i) => {
         return (
+          <View style={styles.userContainer}> 
           <TouchableOpacity
             style={styles.userButton}
             onPress={() => {
@@ -76,7 +84,7 @@ export default function ChatScreen({ navigation }) {
             key={user}
           >
             <TouchableOpacity style={styles.userIcon} onPress={onMaxAvatarPress}>
-                <Avatar rounded source={maxAvatar} size={67.61} />
+                <Avatar rounded source={bitmojiAvatar[i]} size={45} />
             </TouchableOpacity>
             <Text style={styles.userName}> {user} </Text>
             <Ionicons
@@ -86,6 +94,33 @@ export default function ChatScreen({ navigation }) {
               color="lightgrey"
             />
           </TouchableOpacity>
+          
+          {/* <View>
+          <TouchableOpacity style={styles.userIcon}>
+                <Avatar rounded source={Kenny} size={45} />
+            </TouchableOpacity>
+            <Text style={styles.userName}> Kenny </Text>
+            <Ionicons
+              style={styles.userCamera}
+              name="ios-camera-outline"
+              size={24}
+              color="lightgrey"
+            />
+        </View> */}
+
+        {/* <TouchableOpacity style={styles.userIcon}>
+                <Avatar rounded source={Alexis} size={45} />
+            </TouchableOpacity>
+            <Text style={styles.userName}> Alexis </Text>
+            <Ionicons
+              style={styles.userCamera}
+              name="ios-camera-outline"
+              size={24}
+              color="lightgrey"
+            />
+          */}
+
+            </View>
         );
       })}
 
@@ -106,6 +141,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFF",
+  }, 
+  userContainer: {
+    // marginTop: 10, 
+    // marginBottom: 10, 
   },
   userButton: {
     padding: 25,
@@ -115,14 +154,15 @@ const styles = StyleSheet.create({
   },
   userIcon: {
     position: "absolute",
-    left: 5,
+    left: 20,
     top: 5,
+    bottom: 5,
     width: 67.61,
     height: 67.61
   },
   userName: {
     position: "absolute",
-    left: 50,
+    left: 70,
     top: 14,
     fontSize: 18,
   },
