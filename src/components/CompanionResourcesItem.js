@@ -7,7 +7,7 @@ import {
 } from "native-base";
 import ActiveMindsButton from "../../assets/images/resourceButtons/active_minds_button.png"
 import CrisisLineButton from "../../assets/images/resourceButtons/crisis_line_button.png"
-import HeadSpaceButton from "../../assets/images/resourceButtons/headspace_button.png"
+import HeadSpaceButton from "../../assets/images/resourceButtons/headspace_button_fixed.png"
 import HereForYouButton from "../../assets/images/resourceButtons/here_for_you_button.png"
 
 export default function CompanionResourcesItem(props) {

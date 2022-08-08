@@ -3,8 +3,8 @@ import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { collection, getDocs } from "firebase/firestore";
 import db from "../../firebase";
 import Ionicons from "react-native-vector-icons/Ionicons";
-// import Cat from '../../assets/cat.png'
-import Max from '../../assets/images/companion/max_icon_green.png'
+import maxPhone from "../../assets/images/companion/iphone_size_max_green.png"
+import maxAvatar from "../../assets/images/companion/max_icon_green.png";
 import { Avatar } from "@rneui/themed";
 
 export default function ChatScreen({ navigation }) {
@@ -36,7 +36,14 @@ export default function ChatScreen({ navigation }) {
   //     name: 'React Native',
   //   },
   // }
-  
+  const onMaxAvatarPress = () => {
+    navigation.navigate('CompanionProfileScreen', {
+      companionName: 'Max',
+      companionImageSrc: maxPhone,
+      companionAvatarSrc: maxAvatar,
+      companionBirthday: 'August 6, 2022'
+    });
+  }
 
   async function getUsers() {
     const querySnapshot = await getDocs(collection(db, "Chats"));
@@ -68,8 +75,8 @@ export default function ChatScreen({ navigation }) {
             }}
             key={user}
           >
-            <TouchableOpacity style={styles.userIcon}>
-                <Avatar rounded source={Max} size={67.61} />
+            <TouchableOpacity style={styles.userIcon} onPress={onMaxAvatarPress}>
+                <Avatar rounded source={maxAvatar} size={67.61} />
             </TouchableOpacity>
             <Text style={styles.userName}> {user} </Text>
             <Ionicons
