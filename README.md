@@ -6,7 +6,7 @@ companion. The user will be able to directly contact various crisis lines, Here 
 companions we aim to provide accessibility to mental health resources and provide an outlet to the youth. 
 
 ## How to run 
-1. Make sure expo go and xcode, preferably running iphone 13 as a simulator, is installed.
+1. Make sure expo go and xcode is installed.
 2. Download the project open it with VScode or your IDE of choice. 
 3. Open a terminal and type in yarn install.
 4. When completed type in expo go. 
