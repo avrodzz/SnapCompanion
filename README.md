@@ -5,6 +5,8 @@ Snap companions is a personalized hub for directing Snapchatters to mental healt
 companion. The user will be able to directly contact various crisis lines, Here For You, Headspace, and our nonprofit partner, Active Minds. With snap
 companions we aim to provide accessibility to mental health resources and provide an outlet to the youth. 
 
+<img src="assets/snap_companion_prototype.gif" width="300" />
+
 ## How to run 
 1. Make sure expo go and xcode is installed.
 2. Download the project open it with VScode or your IDE of choice. 
